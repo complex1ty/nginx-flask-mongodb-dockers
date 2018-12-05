@@ -8,6 +8,10 @@ services:
   # mongodb:
   #   build:
   #     context: ./mongodb
-  # nginx:
-  #   build:
-  #     context: ./nginx
+  nginx:
+    build:
+      context: ./nginx
+    volumes:
+      - ./nginx/html:/usr/share/nginx/html
+    ports:
+      - "80:80"
