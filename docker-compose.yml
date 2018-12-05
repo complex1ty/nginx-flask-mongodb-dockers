@@ -1,0 +1,11 @@
+version: '3'
+services:
+  flask:
+    build:
+      context: ./flask
+  mongodb:
+    build:
+      context: ./mongodb
+  nginx:
+    build:
+      context: ./nginx
