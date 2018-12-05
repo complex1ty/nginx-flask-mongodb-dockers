@@ -5,6 +5,8 @@ services:
       context: ./flask
     ports:
       - "5000:5000"
+    depends_on:
+      - mongodb
   mongodb:
     build:
       context: ./mongodb
