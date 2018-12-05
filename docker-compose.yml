@@ -3,9 +3,11 @@ services:
   flask:
     build:
       context: ./flask
-  mongodb:
-    build:
-      context: ./mongodb
-  nginx:
-    build:
-      context: ./nginx
+    ports:
+      - "5000:5000"
+  # mongodb:
+  #   build:
+  #     context: ./mongodb
+  # nginx:
+  #   build:
+  #     context: ./nginx
