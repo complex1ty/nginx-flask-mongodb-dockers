@@ -8,6 +8,9 @@ services:
       - "5000:5000"
     depends_on:
       - mongodb
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME
+      - MONGO_INITDB_ROOT_PASSWORD
   mongodb:
     container_name: mongodb
     build:
@@ -16,6 +19,9 @@ services:
       - ./mongodb/db:/data/db
     ports:
       - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME
+      - MONGO_INITDB_ROOT_PASSWORD
   nginx:
     container_name: nginx
     build:

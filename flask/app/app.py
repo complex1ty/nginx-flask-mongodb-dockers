@@ -1,10 +1,15 @@
+import os
 from flask import Flask
 from pymongo import MongoClient
 from random import randint
 
 app = Flask(__name__)
+username = os.environ.get("MONGO_INITDB_ROOT_USERNAME")
+password = os.environ.get("MONGO_INITDB_ROOT_PASSWORD")
 client = MongoClient(
-    "mongodb://mongodb:27017"
+    "mongodb://mongodb:27017",
+    username=username,
+    password=password
 )
 db = client.testdb
 
